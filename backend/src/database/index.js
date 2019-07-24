@@ -3,9 +3,9 @@ import Sequelize from 'sequelize';
 import User from '../app/models/User';
 import File from '../app/models/File';
 import Meetups from '../app/models/Meetup';
+import Subscription from '../app/models/Subscription';
 
 import databaseConfig from '../config/database';
-import Subscription from '../app/models/Subscription';
 
 const models = [User, File, Meetups, Subscription];
 
