@@ -6,7 +6,7 @@ class Meetup extends Model {
     super.init(
       {
         title: Sequelize.STRING,
-        description: Sequelize.STRING,
+        description: Sequelize.STRING(3000),
         localization: Sequelize.STRING,
         date: Sequelize.DATE,
         past: {
@@ -26,8 +26,8 @@ class Meetup extends Model {
 
   static associate(models) {
     this.hasMany(models.Subscription, { foreignKey: 'meetup_id' });
-    this.belongsTo(models.File, { foreignKey: 'banner_id' });
-    this.belongsTo(models.User, { foreignKey: 'user_id' });
+    this.belongsTo(models.File, { foreignKey: 'banner_id', as: 'banner' });
+    this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
   }
 }
 

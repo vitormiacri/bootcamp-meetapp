@@ -76,11 +76,13 @@ class MeetupController {
       include: [
         {
           model: User,
+          as: 'user',
           attributes: ['name', 'email'],
         },
         {
           model: File,
-          attributes: ['url', 'path'],
+          as: 'banner',
+          attributes: ['id', 'url', 'path'],
         },
       ],
     });
@@ -109,7 +111,7 @@ class MeetupController {
       title: Yup.string(),
       description: Yup.string(),
       localization: Yup.string(),
-      date: Yup.date(),
+      date: Yup.date('Data inválida'),
       banner_id: Yup.number(),
     });
 
@@ -117,7 +119,7 @@ class MeetupController {
       return res.status(400).json({ error: 'Invalid Fields' });
     }
 
-    const meetup = Meetup.findByPk(req.params.id);
+    const meetup = await Meetup.findByPk(req.params.id);
 
     if (!meetup) {
       return res.status(400).json({ error: 'Meetup not found' });
@@ -130,11 +132,11 @@ class MeetupController {
     }
 
     if (meetup.past) {
-      return res.status(401).json({ error: 'Can not update past meetups' });
+      return res.status(400).json({ error: 'Can not update past meetups' });
     }
 
     if (isBefore(parseISO(req.body.date), new Date())) {
-      return res.status(401).json({ error: 'Meetup date invalid' });
+      return res.status(402).json({ error: 'Meetup date invalid' });
     }
     await meetup.update(req.body);
 
