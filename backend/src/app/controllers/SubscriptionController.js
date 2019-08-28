@@ -28,7 +28,8 @@ class SubscriptionController {
           include: [
             {
               model: File,
-              attributes: ['path', 'url'],
+              as: 'banner',
+              attributes: ['id', 'path', 'url'],
             },
           ],
         },
@@ -48,6 +49,7 @@ class SubscriptionController {
       include: [
         {
           model: User,
+          as: 'user',
           attributes: ['name', 'email'],
         },
       ],
