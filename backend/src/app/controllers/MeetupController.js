@@ -40,8 +40,8 @@ class MeetupController {
           attributes: ['id', 'url', 'path'],
         },
       ],
-      limit: 10,
-      offset: (page - 1) * 10,
+      limit: 3,
+      offset: (page - 1) * 3,
     });
 
     return res.json(meetups);

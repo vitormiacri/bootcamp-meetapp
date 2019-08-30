@@ -31,6 +31,11 @@ class SubscriptionController {
               as: 'banner',
               attributes: ['id', 'path', 'url'],
             },
+            {
+              model: User,
+              as: 'user',
+              attributes: ['id', 'name', 'email'],
+            },
           ],
         },
       ],
@@ -102,6 +107,18 @@ class SubscriptionController {
     });
 
     return res.json(subscription);
+  }
+
+  async delete(req, res) {
+    const subscription = await Subscription.findByPk(req.params.id);
+
+    if (!subscription) {
+      return res.status(401).json({ error: 'Subscription not found' });
+    }
+
+    await subscription.destroy();
+
+    return res.send();
   }
 }
 
