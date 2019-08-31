@@ -58,7 +58,18 @@ export default function Meetup({ data, loading, isDashboard, onSubmit }) {
 }
 
 Meetup.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    banner: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+    title: PropTypes.string.isRequired,
+    localization: PropTypes.string.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    past: PropTypes.bool,
+  }).isRequired,
   isDashboard: PropTypes.bool,
   loading: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,

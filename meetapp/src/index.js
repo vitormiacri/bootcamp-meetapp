@@ -7,7 +7,6 @@ import './config/ReactotronConfig';
 
 import App from './App';
 import { store, persistor } from './store';
-import Routes from './routes';
 
 export default function Index() {
   return (

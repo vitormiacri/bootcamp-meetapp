@@ -22,7 +22,7 @@ class MeetupController {
 
     const searchDate = parseISO(date);
 
-    const meetups = await Meetup.findAll({
+    const meetups = await Meetup.findAndCountAll({
       where: {
         date: {
           [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],

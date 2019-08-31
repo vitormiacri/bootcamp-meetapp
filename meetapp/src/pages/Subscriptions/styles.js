@@ -10,6 +10,7 @@ export const MeetupList = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
   flex: 1;
+  margin-top: 30px;
   margin-bottom: 15px;
   border-radius: 4px;
 `;

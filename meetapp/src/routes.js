@@ -14,7 +14,7 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Subscriptions from './pages/Subscriptions';
 
-export default isSigned =>
+export default (isSigned = false) =>
   createAppContainer(
     createSwitchNavigator(
       {
@@ -31,6 +31,7 @@ export default isSigned =>
                 Profile,
               },
               {
+                resetOnBlur: true,
                 tabBarOptions: {
                   keyboardHidesTabBar: true,
                   activeTintColor: '#fff',
