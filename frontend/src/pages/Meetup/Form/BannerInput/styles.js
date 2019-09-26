@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  align-self: center;
+  align-self: stretch;
   margin-bottom: 10px;
 
   label {
     cursor: pointer;
 
     img {
-      height: 300px;
-      width: 960px;
+      height: auto;
+      width: 100%;
       border-radius: 4px;
     }
 
     input {
       display: none;
     }
+
     > span {
       color: #f94d6a;
       margin: 10px 0;
@@ -24,7 +25,7 @@ export const Container = styled.div`
 `;
 
 export const BannerDefault = styled.div`
-  width: 960px;
+  width: 100%;
   height: 300px;
   display: flex;
   flex-direction: column;
