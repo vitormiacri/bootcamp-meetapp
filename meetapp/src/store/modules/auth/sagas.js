@@ -3,7 +3,7 @@ import { Alert } from 'react-native';
 
 import api from '~/services/api';
 
-import { signFailure, signInSuccess } from './actions';
+import { signFailure, signInSuccess, signUpSuccess } from './actions';
 
 export function* signIn({ payload }) {
   try {
@@ -35,6 +35,7 @@ export function* signUp({ payload }) {
       email,
       password,
     });
+    yield put(signUpSuccess());
   } catch (err) {
     Alert.alert('Falha no cadastro, verifique seus dados!');
     yield put(signFailure());
