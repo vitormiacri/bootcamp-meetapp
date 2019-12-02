@@ -7,6 +7,20 @@ O sistema é para auxiliar a criação e divulgação de Meetups, as principais 
 - Criar, alterar e excluir evento de Meetups;
 - Se inscrever e cancelar uma inscrição em qualquer Meetup;
 
+## Principais bibliotecas utilizadas
+
+- [Unform](https://github.com/Rocketseat/unform)
+- [Styled Components](https://www.styled-components.com/)
+- [Date-Fns](https://date-fns.org/)
+- [Yup](https://github.com/jquense/yup)
+- [React Toastfy](https://www.npmjs.com/package/react-toastify)
+- [React Icons](https://react-icons.netlify.com/#/)
+- [React Router Dom](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux Saga](https://github.com/redux-saga/redux-saga)
+- [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+
 ## Instalação local
 
 - Clone este repositório:
@@ -16,6 +30,8 @@ git clone https://github.com/vitormiacri/bootcamp-meetapp clinic-api
 ```
 
 ### Backend
+
+> Utilizamos como banco de dados o postgres, mongo e redis. Lembre-se de instalá-los.
 
 Para executar o **servidor da api**, siga os passos abaixo:
 
