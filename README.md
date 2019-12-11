@@ -26,7 +26,7 @@ O sistema é para auxiliar a criação e divulgação de Meetups, as principais 
 - Clone este repositório:
 
 ```
-git clone https://github.com/vitormiacri/bootcamp-meetapp clinic-api
+git clone https://github.com/vitormiacri/bootcamp-meetapp meetapp
 ```
 
 ### Backend
